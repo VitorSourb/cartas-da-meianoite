@@ -1,35 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <link rel="icon" href="images/XII.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <li><a href="#postagens"><i class="fas fa-newspaper"></i> Postagens</a></li>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cartas da Meia-Noite</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Cabeçalho com Menu -->
     <header>
-        <h1>Cartas da Meia-Noite</h1>
+      
         <nav>
             <ul>
-                <li><a href="#INÍCIO">INÍCIO</a></li>
-                <li><a href="#TEXTOS">TEXTOS</a></li>
-                <li><a href="#MULTIMÍDIA">MULTIMÍDIA</a></li>
-                <li><a href="#...">...</a></li>
+                <li><a href="#postagens">Postagens</a></li>
+                <li><a href="#poemas">Poemas</a></li>
+                <li><a href="#midia">Mídia</a></li>
+                <li><a href="#sobre">Sobre</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section id="sobre">
-            <h2>Sobre Mim</h2>
-            <p>Descrição sobre você ou sua ideia.</p>
-        </section>
-        <section id="projetos">
-            <h2>Meus Projetos</h2>
-            <p>Detalhes dos projetos.</p>
-        </section>
-    </main>
+
+    <!-- Seção de Postagens -->
+    <section id="postagens">
+        <h1>Postagens</h1>
+        <article>
+            <h2>Título da Postagem</h2>
+            <p>Texto introdutório ou resumo da postagem...</p>
+            <a href="#">Ler mais</a>
+        </article>
+    </section>
+
+    <!-- Seção de Poemas -->
+    <section id="poemas">
+        <h1>Poemas</h1>
+        <article>
+            <h2>Título do Poema</h2>
+            <p>Verso 1<br>Verso 2<br>Verso 3...</p>
+        </article>
+    </section>
+
+    <!-- Seção de Suporte para Áudios e Vídeos -->
+    <section id="midia">
+        <h1>Áudios e Vídeos</h1>
+        <audio controls>
+            <source src="audio.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <video controls>
+            <source src="https://www.youtube.com/watch?v=QQdtlztjI4A" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre">
+        <h1>Sobre</h1>
+        <p>Descrição sobre você e o objetivo do blog.</p>
+    </section>
+
+    <!-- Rodapé -->
     <footer>
-        <p>&copy; 2024 Seu Nome</p>
+        <p>&copy; 2024 Blog de Vitor</p>
     </footer>
 </body>
 </html>
