@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>EXÍLIO II</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo">
+    <h1>Exílio II</h1>
+    <div class="poema">
+      O que eu diz quando fui para <i>Kosovo</i>?
+      Me familiarizei com a ágüa.
+      As ágüas geladas da pia
+      Das louças
+      Das roupas
+      Do chão
+      Da chuva
+      E do meu rosto.
+      Qüando não fazia isso,
+      Trotava com meu cavalo
+      Em busca do meu campo florido
+      Cujo endereço perdi.
+      E, no fim do dia,
+      Tarde serena,
+      Eu lembrava do homem da mão fechada
+      E eu assumia o papel dele:
+      Tinha que engolir o qüanto sou um <i>Kosovo</i>!
+      E, no meio dos gritos,
+      Você exclamou: "<i>Se mova! Me ajuda!</i>"
+      Eu sei
+      Eu tento
+      Eu faço
+      Eu erro
+      Eu falho
+      Eu caio
+      Eu levanto
+      Ou, do chão
+      Eu retento.
+      Eu sei
+      Eu tenho que ajduar você,
+      Mas quem é que me ajuda?
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

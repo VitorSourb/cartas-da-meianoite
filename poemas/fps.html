@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>FUMO PÓS SEXO</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo">
+    <h1>Fumo Pós Sexo</h1>
+    <div class="poema">
+      Ontem, joguei fora meu último cigarro,
+      Güardei o maço e disse que não mais fumaria.
+      Hoje, joguei gora meu último cigarro,
+      Apaguei-o na sola e tossi duas vezes.
+      Amanhã, jogarei fora meu último cigarro,
+      Pigarriarei cinza no chão.
+
+      Beberão da minha bebida,
+      Fumarão dos meus charutos,
+      Estapiarão minha face;
+      Hei de engolir fole a noite toda.
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

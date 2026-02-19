@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>CÍTRICO</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo">
+    <h1>Cítrico</h1>
+    <div class="poema">
+      Roda, roda viva, roda fantasma
+      Rosa, azul, <i>blues</i> à meia-noite
+      Azul da cor do sapato que foi para a máquina de lavar
+      E eu joguei fora.
+
+      Não falei, desenhei. Vi até retrato meu.
+      Dormi, mostei e, sozinho, desmanchei tudo
+      Joguei tudo fora e, como você me ensinou:
+      Da água para o cacto, 'pros espinhos e, acima de tudo,
+
+      Eu sou um limão:
+      Intragável até que se faça algo melhor
+      Mas nunca naturalmente doce.
+
+      Tudo que vale a pena
+      Se não vira amor
+      Vira poema.
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

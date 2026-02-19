@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>BUARQUEI-ME, AMOR</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/mnl.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo" style="text-align: center;">
+    <h1>Buarquei-me, Amor</h1>
+    <div class="poema">
+      Todo dia desperto com o gorjear das aves
+Sentindo-me como quem partiu ou morreu
+Ou como se, fatalmente, algum faz de conta tenha se desfeito
+Escalo as manufaturas como se fosse lógico
+Procurando, talvez, uma concessão pra sorrir
+
+Então eu me fiz de bonito como a muito tempo não ousava
+Rainha dos detentos, dos loucos, dos lazarentos
+Sambei escondido, para ninguém reclamar
+Olhei nos seus olhos e vi
+
+Que o meu doce predileto fica em seus braços
+Afogou meu desalento
+Não posso me calar: Eu não presto, mas
+Vamos, amigo, se ajeite comigo
+E dê graças a Deus
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

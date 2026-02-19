@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>ROSA DO ÁRIDO</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo">
+    <h1>Rosa do Árido</h1>
+    <div class="poema">
+      Na minha cabeça, nesse pátio
+Depois de toda a ventania
+Ainda recordo da esbelta rosa do árido
+Que já chegou a me fazer companhia
+
+No sertão de céu modesto
+Ela; A Virgem dos Lábios de Mel
+Que com um bradar perverso
+Fez eu tirar o meu chapéu
+
+Meus desejos foram incandiados
+Pelo Sol soberano. E à noite
+Obstante que, pelo sertão martirizado,
+
+Esse querer e poder são faces de um açoite
+Incrustados em uma moeda, que cai em pé
+E gira a noite toda no chão do pátio, na chalé
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

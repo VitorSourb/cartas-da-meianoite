@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>ENTRE ESPADAS E CÂNTICOS</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo">
+    <h1>Entre Espadas e Cânticos</h1>
+    <div class="poema">
+      Ó cavaleiro, de armadura e sem alma,
+      Teu peito vazio, sem medo ou dor,
+      Que, na fragorosa batalha, acalma
+      Teu coração, mas não teu interior.
+
+      Em tuas mãos, o peso da espada reluz,
+      Mas a verdadeira luta é em teu peito a gemer,
+      Pois coragem, meu amor, é enfrentar a luz,
+      E não viver à sombra do medo de perder.
+
+      E tu caíste, com o peso da tua sina,
+      Sem nunca entender que a morte é só um sim,
+      Mas aqui estou, com minha última rima,
+      Cantando por ti, meu amor, meu único fim.
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

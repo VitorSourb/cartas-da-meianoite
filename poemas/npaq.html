@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>NÃO ME PERDOEI POR AQUELA NOITE</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo">
+    <h1>Não me Perdoei por Aquela Noite</h1>
+    <div class="poema">
+      Uma tarde, perdi meu puríceo,
+      Meu primeiro batom vermelho.
+      Você não faz ideia do qüanto senti,
+      De quando, à primazia, temi a noite.
+
+      Depois daí, conheci minha primeira moça,
+      Minha primeira mulher, aquela cruz.
+      Somente com ela tive lampejos de alegria,
+      E, quando em abstinência,
+      Eu só quis meu batom que joguei fora.
+
+      Tudo vermelho e úmido, em todos os cantos,
+      Minhas mãos sujas, manchadas daquele dia
+      Tão grande o arrependimento que me matava,
+      Que usei minha mulher para esquecer.
+
+      A primeira mulher a qüal me relacionei,
+      A primeira que usei para me anestesiar,
+      Também foi embora. Seu nome era Amélia.
+      
+      Ela me deixou presentes:
+      Tem pontos brancos nas telas,
+      Manchas escuras nas paredes
+      E todos dançam qüando olho.
+      O quanto do que vem de cima é real?
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

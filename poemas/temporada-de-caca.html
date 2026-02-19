@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>TEMPORADA DE CAÇA</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo" style="text-align: center;">
+    <h1>Temporada de Caça</h1>
+    <div class="poema">
+      Nesta velha cabana,
+      Sou ovacionado por uma glória morta,
+      Tão velha quanto os tapetes de pele
+      Que forram meu trono de marfim.
+
+      Mas os entalhes ainda estão lá,
+      Os sulcos do passado profundos na madeira,
+      Tão presentes em minhas mãos, que não os esqueço
+      E você os vê — tampouco pode ignorá-los.
+
+      Teu retrato guardo, levo comigo
+      Ah, minha amada, serenata das noites frias
+      Não sabes o quão deboto sou por um retrato
+      O quanto te escrevo e descrevo no alfarrábio
+      Mas de que vale um pedido vindo de lábios
+      Que tanto sangue desejaram
+      E nem com todos os prazeres do mundo se calaram?
+
+      Eu me pergunto:
+      Se você se apaixonar pelas minhas flores,
+      E somente por elas,
+      Esquecendo as raizes,
+      Quando chegar o outono
+      O que fará?
+      Ama-me, ou amas a sensação que te causo?
+
+      Você até pode lançar uma moeda,
+      Apostar em mim,
+      Mas antes, responda-me:
+      Qüal o valor se um homem que é barato
+      Tão barato que pode ser comprado?
+      E seu eu for esse homem?
+
+      E se minhas mãos forem sujas demais
+      Para tocar sua pele?
+      Se minha sombra for densa demais
+      Para não sufocar sua luz?
+
+      Não há redenção na caça.
+      Apenas espingardas que não posso jogar fora,
+      E olhos de vidro que me fitam na noite.
+      E o retrato dela, sempre ali,
+      Me lembrando do que nunca te terei.
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

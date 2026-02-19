@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>INAUDÍVEL</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo">
+    <h1>Inaudível</h1>
+    <div class="poema">
+      De almejar grandes coisas, nunca fui
+      Palavras restaram: definem o que quero e o que <i>je soi</i>.
+      Passar sem nada, viver um magistério
+      Indaguei meu pedir, vi e não vivi o que quero.
+      Oblíqüo imperfeito, deslocado, sincero,
+      Ontem, supérfluo, mas num falho bradas, anuncio:
+      Quero! O oblíqüo átono calado
+      O fervor em dose dupla de um aperto
+      A medida anti-mortalha do frio
+      A última lágrima de um amante
+      A primazia lacrimosa de uma mãe
+      Eu te quero!
+      Como chamego imortal,
+      Mas não apego carnal,
+      Apenas aquilo impalpável
+      E por intermédio do perdível
+      Abraça-me.
+      E após isso?
+      Não importa o que vem depois,
+      Deixa-me viver.
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

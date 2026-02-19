@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>O BARDO</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/mnl.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo">
+    <h1>O Bardo</h1>
+    <div class="poema">
+      No fundo de um baú velho havia uma carta
+E ela dizia:
+
+"A noite é nosso habitat, nosso lar
+Eu poderia te dar todas as estrelas do céu, que não seria suficiente
+Ou até todas as pérolas do mar
+E ainda seria indecente
+
+Meu sublime espectro, calma
+Você pertence tão a si mesmo
+Que é um deleite genuíno da alma
+Receber carinho seu, fico lesmo
+Seu sorriso é luz em meio a tanto caos
+Seu abraço é moradia em meio a tanto frio
+Você é a definição de ternura, compaixão, amor
+É inevitável, meu caro
+As memórias daquele dia pulsam feito sangue venoso, com ardor
+Tem dias que eu olho para a lua
+Ela não tem sua beleza, mas vale a pena observá-la
+Suas belas madeixas, incomparáveis como a pessoa, sua
+Me fazem capturar uma ideia, e reservá-la:
+Brincar de filósofos, poeta
+Com você, sonhar utopia
+E ter certeza de uma meta
+Poderei esperar meu amor, assim como ele me espera, no próximo dia
+
+De um grande amante, para um sublime príncipe, que também é bardo
+Segure minha mão, e tenha a certeza que eu nunca a soltarei "
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

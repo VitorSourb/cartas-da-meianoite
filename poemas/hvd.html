@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>HEROI, VILÃO E DEUS</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/mnl.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo">
+    <h1>Heroi, Vilão e Deus</h1>
+    <div class="poema">
+      <p style="text-align: left;"> Esse décimo de período me trouxe o aroma das rosas,
+Lembra?
+Dos desenhos coloridos em palavras,
+Lembra? Dos confio's, amarros, brasas?
+lembra daquela parada, escrita?
+A brisa tímida e serena e dourada
+Que acaricia nossas ideias
+E a plebe, meus três amigos, três facetas
+O exílio, o fim, o início e o tolo
+Vem, sente-se comigo, ou se escore em mim
+Pegue uma taça de vinho, sem adjetivos cativantes
+Enquanto esse tempo, tempo, tempo retruca
+Vamos brincar de chamego, de amantes, de carinho
+E antes do juízo final, vamos ver essa declaração
+Escrita em um protocolo
+1•13•15•18</p>
+
+<p style="text-align: right;"> Posso não ser Diógenes, mas...
+Eu amo brincar de morte
+Abraçar o alvorecer e o crepúsculo
+Adorar as estrelas apocalípticas em colapso
+Queimar o matagal e os jardins
+Com carvão falso
+Tossir a fumaça na cara dos inocentes
+Entranhar essa treva espessa
+Em um coração vermelho
+Até que ele suma
+E eu perceba que nada existiu
+O que é resta é pairar no vácuo dessa importância
+E, quiçá, adorar esses espectros impalatáveis
+Por que eu posso bater, mas não posso acariciar</p>
+
+<p style="text-align: center;"> "Vou esculpir meu abismo em madeira tão frágil quanto esse coramente, e envernizá-lo com pinceladas
+Douradas de mediocridade"
+
+Estávamos cobertos de ouro, e eu, de repulsividade e repelência
+Agora, entretanto, eu mato minha sede no cálice da sobriedade, oferecido por Caronte
+"Hoje não sou mais homem, nem boneco
+Sou patriarca dessa imortalidade filosófica, que habita nesse
+Mosteiro mental, ornamental, conotativo, que nos move para a
+Redenção e fuga dessa casca oca moldada a mão pela estrela
+Mais brilhante da manhã, que caiu para iluminar nossos dias"</p>
+
+<p style="text-align: right;"> Lhe buscarei, nos cativaremos
+Navegaremos nosso galeão
+Nessas águas gélidas de verdades concretas mutáveis
+Brincaremos de abraço e chamego
+Sem precisar mais sonhar
+Meu amado orador e guerreiro da noite
+Encantador de gorjeios</p>
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

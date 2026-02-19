@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>TANINOS DE FERRO</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo" style="text-align: center;">
+    <h1>Taninos de Ferro</h1>
+    <div class="poema">
+      Nosso primeiro beijo teve gosto de tormenta
+      Um sabor que nunca antes cruzara minha língua,
+      Algo desconhecido,
+      Intenso,
+      Qüase perigoso.
+
+      Qüando você estava para baixo, já não se cuidava,
+      Os beijos matinais perdiam o frescor de hortelã
+      E traziam vestígios de descuido,
+      De noites mal dormidas.
+
+      Dois goles de vinho e um belo par de saltos
+      Fazem qualquer mulher irresistivelmente alta,
+      E os beijos mais quentes
+      Foram também os menos sóbrios;
+      Tinham gosto de taninos, de embriaguez,
+      De promessas feitas entre taças vazias.
+
+      Nosso último beijo,
+      Antes de eu embarcar,
+      Aconteceu por detrás da cerca velha.
+      Você, desastrada como sempre,
+      Deixou-se levar pelo instante.
+      O gosto, naquele dia, não era de hortelã,
+      Nem de vinho.
+      Era ferro.
+      Sangue.
+      Despedida.
+
+      E quando o ônibus partiu,
+      O gosto metálico permaneceu na boca.
+      Era como se teu nome
+      Ainda estivesse preso entre meus dentes.
+
+      E lembro que, no vidro do ônibus,
+      Meu reflexo parecia carregado de vinhos antigos.
+      Como se você tivesse deixado em mim
+      Um último gole —
+      O mais amargo,
+      O mais verdadeiro.
+
+      E ali, enquanto a estrada rasgava a janela,
+      Entendi que certos beijos
+      Não terminam quando os lábios se afastam,
+      Mas quando o sangue
+      Finalmente esquece o sabor
+      De quem o fez ferver.
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

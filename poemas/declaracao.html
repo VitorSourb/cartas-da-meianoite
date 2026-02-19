@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>DECLARAÇÃO</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/mnl.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo">
+    <h1>Declaração</h1>
+    <div class="poema">
+      Pigarros e pigarros
+Olhando nesse espelho
+Que enxergou ao invés de refletir
+Eu viro pileque
+Regurgito essa fumaça negra
+Me balanço nessa rede
+Como seu concubino.
+Amanhã te vi, e as
+Mortalhas que cortam o céu, me disseram:
+"Oi! Antes de enclausurar a realidade
+Te digo, e penso
+Em seu encosto, encontro sossego.”
+Sendo assim, sendo preciso
+Use esse pilar de mármore para escapar do que lhe for desagradável
+Assim, amanhã, irei a seu encontro
+Morrer afogado, debruçado nos meus alvoreceres perdidos e crepúsculos
+Cobertos de orvalho
+E servir de mesa, para que escreva seus contos e prosas
+E pintar esse domo celeste
+E se apoie em mim
+Até que eu acorde
+E não queria mais sonhar
+
+Posso sonhar
+Mais uma noite
+Só mais uma noite?
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

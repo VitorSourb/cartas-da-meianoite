@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>LATA DE FEIJÕES</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo">
+    <h1>Lata de Feijões</h1>
+    <div class="poema">
+      Peguei uma lata de feijões
+      Não estava aquecida, estava somente ali
+      Feijões fermentados de tão velhos;
+      Velhos conhecidos, aliás.
+
+      Abri a lata, estourou
+      Voaram, sujaram minha mesa,
+      Minhas roupas,
+      Meu chão,
+      Meus cabelos,
+      Tudo!
+
+      Não posso oferecer a ninguém.
+      Os feijões, infelizmente, são meus
+      Então só eu posso limpar a bagunça.
+
+      Por onde devo começar?
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

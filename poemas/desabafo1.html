@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>DESABAFO I</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/mnl.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo" style="text-align: center;">
+    <h1>Desabafo I</h1>
+    <div class="poema">
+     Não sei se avanço ou retrocedo,
+Minha nau não consegue avançar por essas águas,
+Falta-me,
+Falta-me coragem para enfrentar.
+
+Vale a pena? Não sei.
+
+Não posso moldar-me apenas para o agrado alheio,
+Se não deu certo pela situação atual, talvez,
+Só talvez,
+Não funcionará de maneira nenhuma.
+
+Decepcionei-me duas vezes,
+Temo.
+Não foi notado.
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

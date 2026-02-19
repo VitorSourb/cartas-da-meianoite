@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>MATA-ME</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo">
+    <h1>Mata-me</h1>
+    <div class="poema">
+      'Quis que parasse de tragar
+      Por, pelo menos, uma alvorada;
+      Pois te levarei 'pra ver o céu da madrugada
+      Te levar uma vez mais para sonhar
+
+      Mas não se esqueça:
+      "<i>A noite é dos pensantes, dos poetas,
+        Das biscates e dos amantes</i>"
+        Portanto, escute com clareza:
+
+        Sei que há algo em mim, ' difícil de explicar,
+        E que continuo o mesmo,
+        Mas, no momento ' que ' definhar,
+
+        Vou abraçar meus desalentos
+        Carpir o espelho e exclamar:
+        "<i>Onde você estava com os pensamentos?</i>"
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

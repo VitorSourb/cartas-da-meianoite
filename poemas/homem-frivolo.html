@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>HOMEM FRÍVOLO</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo">
+    <h1>Homem Frívolo</h1>
+    <div class="poema">
+      Desejei teu corpo como um cão deseja o osso —
+      Não por fome,
+      Mas por orgulho de morder.
+      Na beira do rio, vi meu reflexo
+      E saltei sobre ele.
+      Afoguei-me no desejo que inventei,
+      Com o osso ainda entre os dentes.
+
+      Tu me perdoaste.
+      Mas que bênção é essa que me fere?
+      A verdade pesa mais que o erro,
+      Qüando se a carrega no colo.
+
+      Sou podre.
+      Podre não por te trair,
+      Mas por não saber me levantar do colo
+      Em que deito minha covardia.
+
+      Tua mão afaga meus cabelos —
+      e eu choro, como se fosse justo.
+      Como se o carinho curasse
+      Aquilo que te roubei.
+
+      Como posso ser tão fraco,
+      Ao ponto de precisar
+      Do que eu mesmo queimei?
+
+      Não fui homem
+      Qüando temi tua dor.
+      Não fui homem
+      Qüando precisei do teu cuidado
+      Mais que da tua segurança.
+
+      Tu, flor armada, guerreira exausta,
+      me cobria com beijos
+      Enqüanto eu implorava,
+      Em silêncio,
+      Para que me ensinasses
+      A não morrer em mim mesmo.
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>
