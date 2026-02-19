@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Ops! :(</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="icon" href="favicon.png" type="image/png">
+</head>
+<body>
+  <div id="menu-container"></div>
+  <!-- HOME -->
+  <h1 style="text-align: center;">Ops!</h1>
+  <p style="text-align: center;">Desculpe, a página está indisponível no momento.<br>Estou construindo algo bonito aqui. Por enquando, escute uma música bonita.</p>
+  <div style="min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;">
+    <audio controls>
+      <source src="letitbe.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+   <!-- Injeção do menu -->
+  <script>
+    fetch('../menu.html')
+  .then(response => response.text())
+  .then(data => {
+    const menuContainer = document.getElementById('menu-container');
+    menuContainer.innerHTML = data;
+
+    // Marca o link ativo
+    const links = menuContainer.querySelectorAll(".nav-link-menu"); // só pega links dentro do menu
+    const paginaAtual = location.pathname.split("/").pop(); // pega o arquivo atual
+
+    links.forEach(link => {
+      // ajusta o href para comparar só o nome do arquivo
+      const href = link.getAttribute("href").split("/").pop();
+
+      if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+        link.classList.add("ativo");
+      } else {
+        link.classList.remove("ativo"); // garante que os outros links não tenham underline
+      }
+    });
+  });
+
+  </script>
+</body>
+</html>
