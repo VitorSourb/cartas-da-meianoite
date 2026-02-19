@@ -1,0 +1,139 @@
+/* Resets globais */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  font-family: "Mendoza", Georgia, "Times New Roman", serif;
+  min-height: 100vh;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos da página de poemas */
+.titulo {
+  margin: 0;
+  font-weight: normal;
+  font-size: 2.5em;
+}
+
+.subtitulo {
+  opacity: 0.7;
+}
+
+/* Grade de poemas */
+.grade-poemas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards por linha */
+  gap: 30px; /* Espaço entre os cards */
+  justify-content: center; /* Centraliza se houver menos de 3 cards */
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Cards */
+.card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #ffffff;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* Mantendo o card quadrado */
+.thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Quadrado perfeito */
+  background-color: #222;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Preenche mantendo proporção */
+  display: block;
+}
+
+.titulo-card {
+  margin-top: 10px;
+  font-size: 1em;
+  text-align: center;
+  opacity: 0.9;
+}
+/* Página de poema individual */
+.voltar {
+  display: inline-block;
+  margin-bottom: 30px;
+  color: #aaa;
+  text-decoration: none;
+}
+
+.voltar:hover {
+  text-decoration: underline;
+}
+
+.poema {
+  max-width: 700px;
+  margin: auto;
+  white-space: pre-line;
+  line-height: 1.6;
+  font-size: 1.1em;
+}
+
+/* Fonte personalizada */
+@font-face {
+  font-family: "Mendoza";
+  src: url("../fonts/Mendoza-Roman-SC-ITC-TT-Book.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Header/Menu */
+.nav-bar {
+  padding: 30px 40px 10px 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nav-link-menu {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 1.05em;
+  letter-spacing: 1px;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.nav-link-menu:hover {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255,255,255,0.6);
+}
+
+.nav-link-menu.ativo {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.menu-line {
+  margin: 20px auto 0 auto;
+  height: 1px;
+  width: 80%;
+  max-width: 860px;
+  background-color: #333;
+}

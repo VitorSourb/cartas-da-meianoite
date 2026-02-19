@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>CARTAS DA MEIA-NOITE</title>
+  <link rel="stylesheet" href="../css/poemas.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+
+  <!-- Menu -->
+  <div id="menu-container"></div>
+  
+  <main>
+    <div class="grade-poemas" id="grade-poemas">
+
+      <!-- Os cards são gerados pelo JavaScript -->
+
+    </div>
+  </main>
+
+  <script src="../js/elcid.js"></script>
+  <script>
+    fetch('../menu.html')
+  .then(response => response.text())
+  .then(data => {
+    const menuContainer = document.getElementById('menu-container');
+    menuContainer.innerHTML = data;
+
+    // Marca o link ativo
+    const links = menuContainer.querySelectorAll(".nav-link-menu"); // só pega links dentro do menu
+    const paginaAtual = location.pathname.split("/").pop(); // pega o arquivo atual
+
+    links.forEach(link => {
+      // ajusta o href para comparar só o nome do arquivo
+      const href = link.getAttribute("href").split("/").pop();
+
+      if (href === paginaAtual || (href === "../index.html" && paginaAtual === "")) {
+        link.classList.add("ativo");
+      } else {
+        link.classList.remove("ativo"); // garante que os outros links não tenham underline
+      }
+    });
+  });
+
+  </script>
+</body>
+</html>

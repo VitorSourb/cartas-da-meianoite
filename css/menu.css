@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Mendoza";
+  src: url("../fonts/Mendoza-Roman-SC-ITC-TT-Book.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ===== TOPO ===== */
+
+.nav-bar {
+  padding: 15px 20px 5px 20px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nav-link-menu {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 1.05em;
+  letter-spacing: 1px;
+  font-family: "Mendoza", Georgia, "Times New Roman", serif;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.nav-link-menu:hover {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255,255,255,0.6);
+}
+
+.nav-link-menu.ativo {
+  color: #fff;
+}
+
+.menu-line {
+  margin: 20px auto 0 auto;
+  height: 1px;
+  width: 80%;
+  max-width: 860px;
+  background-color: #333;
+}
