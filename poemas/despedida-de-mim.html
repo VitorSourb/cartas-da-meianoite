@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>DESPEDIDA DE MIM</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo">
+    <h1>Despedida de Mim</h1>
+    <div class="poema">
+      Naquela mesa,
+      Haviam duas xícaras e um cigarro;
+      Minhas mãos passaram por tudo,
+      Não toquei nada,
+      Mas aquele cigarro...
+      Traguei,
+      Oh, Deus, e como traguei.
+      Traguei como se fosse o último fumo do mundo.
+
+      E foi então que escrever se tornou meu conforto:
+      Quando viver se tornou meu purgatório,
+      Pensar, o inferno,
+      Confabular, o paraíso.
+
+      Por fim, peguei meu único livro.
+
+      Sua sinopse?
+
+      "<i>Sou náufrago em um mar sem bússola,
+      Um eco no abismo que grita por silêncio.</i>"
+
+      Seu título?
+
+      "<i>Fragmentos de um ser</i>"
+
+      Seu prefácio?
+
+      "<i>Eu existo?
+      Ou apenas ocupo espaço?
+      Ontem, chorei. Hoje, me calei.
+      Amanhã... Será que haverá um amanhã?</i>"
+
+      A primeira página?
+
+      "<i>Amanhã? Já não importa.
+      Eu já não sou mais ninguém.
+      Eu só... Sou.
+      E isso é o suficiente para me consumir.</i>"
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

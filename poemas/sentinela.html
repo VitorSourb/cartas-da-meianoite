@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>SENTINELA</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo">
+    <h1>Sentinela</h1>
+    <div class="poema">
+      Há um tempo, eu tive
+      Sim, eu tive tempo
+      Tempo de brincar com minhas cartas
+      Cartas que tanto amei
+
+      Hoje, crescido, não mais
+      Não queria, mas tive que deixá-las ao ar
+      Queria, no ar, saber que ainda a tenho
+      Mas sei que, há tempos, se foram
+
+      Sou não mais que um sentinela
+      Amargo, covarde 'pra engolir
+      Engolir temos e incompletudes
+
+      Sou não mais que a sombra de um desespero
+      O prelúdio de uma desgraça, um rancor passado
+      Um sentinela do desamor
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

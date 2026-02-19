@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>INCREDULIDADE II</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo" style="text-align: center;">
+    <h1>Incredulidade II</h1>
+    <div class="poema">
+      Hoje, eu desci. Vi um mundo frio
+      O mesmo que nos viu juntos;
+      Ascendi três velas: cada uma, um brio,
+      O fulgor de nossos vislumbres.
+
+      Cá, dá tua mão, tira tua máscara,
+      E ao eco do vazio, ouça-me:
+      "<i>Por que tu tinha que ser um anjo?</i>"
+      O qüão rápido nós acontecemos?
+      
+      Uma asa partida ao vento,
+      Uma luz perdida no tempo
+      E, num caminho reto, continuo incrédulo.
+
+      Eu, como cativo e cativado sempre... Você sabe
+      E, com uma dúvida, segurando sua mão, indago:
+      Ainda quer segurar a minha, mesmo que eu tenha o porquê do por quê?
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

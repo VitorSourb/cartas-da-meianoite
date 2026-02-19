@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>FARDO</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo" style="text-align: center;">
+    <h1>Fardo</h1>
+    <div class="poema">
+      Amélia, a mulher de minha vida
+      Deixou-me um mensagem
+      — ou uma carta, um clássico —
+      Só para que eu lembre que ela vai, mas volta.
+
+      É só mais um ordinário dia.
+      Não tem nevoa de prata,
+      Ventos escuros, brisas vermelhas
+      Só a tenaz melancolia
+
+      Sem mais prazer em escrever
+      Sem mais o gozar de um suspiro carnal;
+      O desejo de desviver, é sazonal
+
+      Diz pra mim o valor que tenho quando,
+      Nesses dias, de mim, me escondendo, não encontro
+      Nem mentindo, dizendo que isso é um purgatório
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

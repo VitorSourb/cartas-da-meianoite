@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>HOMEM AO MAR</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/mnl.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo" style="text-align: center;">
+    <h1>Homem ao Mar</h1>
+    <div class="poema">
+      Sinto a brisa da maresia
+A garoa da maré
+Me ajude, perdi-me
+Nesse mar de pensamentos!
+
+Minha cabeça e retaguarda envergam
+Não durmo, não sinto
+Sinistro...
+O que é isso?
+
+Desorientei-me nessas águas,
+Acudam-me! Fisguem-me!
+Ainda sou um marinheiro inexperiente
+
+Tudo bem, buscarei essa sirena
+Que vem atormentando essas águas
+Apaziguarei eu mesmo a situação, navegarei através das ondas
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>DESESPERO</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo">
+    <h1>Desespero</h1>
+    <div class="poema">
+      Você não sabe o quanto te esperei
+      Nesse lugar frio, escuro
+      Chamado solidão.
+      Adornado de cacos de gelo que voam
+      Teleguiados
+      E lasceram a carne impiedosamente
+
+      Eu seguro tua mão
+      Sinto o calor dela
+      Mas você não está aqui.
+      Aparece, põem o rosto à janela
+      Abre a janela
+      Grita,
+      Grita mais alto...
+      Eu quero ouvir tua voz!
+
+      Eu te quis
+      De todas as formas que imagina
+      Quis teu amor também
+      Mas como posso?
+      Como posso amar
+      Como posso, enfim, ser amado
+      Se nem a mim tenho esmero?
+
+      Como posso amar,
+      Ser amado,
+      Se sou a estrela que mais brilha,
+      A fulgor mais lancinante dos céus,
+      Se eu sou o Portador da Luz?
+
+      E você sumiu,
+      Partiu,
+      Num mundo que se fez hostil.
+      Eu disse pra eu me cuidar
+      Mas você vê que já sou febril
+      E tua falta, meu desespero induziu
+
+      Já preparei o palácio
+      A sala
+      Os fundos, a mobília
+      Esperando os braços gelados da dona:
+      A inomeável, execrável e esperada
+      Bela, gelada e inevitável.
+
+      E uma certeza deixo nesse bilhete
+      Quero partir dormido
+      Para sonhar contigo
+      Para sempre
+      E não mais acordar.
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>ONDE MEREÇO ESTAR</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo">
+    <h1>Onde Mereço Estar</h1>
+    <div class="poema">
+      Fui embora para <i>Kosovo</i>.
+      Onde fica? ... Isso interessa?!
+      Aqui é diferente
+      Não é Pasargada
+      Aqui eu sou o rei
+      Mas não sou amigo de ninguém
+      Não tenho a mulher que quero
+      Não tenho uma cama para dormir
+      Aliás, as únicas que existem
+      Estão ocupadas por baratas
+      E, pela janela,
+      Aqueles homens, com pedras, sobem os morros
+      Essa é a paisagem.
+      Aqui o céu é realmente vermelho
+      Aqui eu me aborreço sozinho
+      Aqui eu não tenho aquela mão
+      Aqui eu não ouço grito
+      Mas meu grito ainda é estridente
+      E me acorda,
+      E me lembra que eu não deveria estar aqui,
+      E que eu tinha um campo florido,
+      E que eu salvei alguém, e ela está lá.
+      Mas esse foi o preço:
+      Eu perdi o endereço
+      Levado pelo vento fresco
+      Pois lá, estar eu não mereço
+      Só aqui, nesse lugar grotesco
+      Pesadelo de um homem dantesco.
+      Vivo em <i>Kosovo</i>, pois não tive o que quis
+      Eu não posso ter o que quero
+      Não poderei
+      E nem daqui posso sair
+      Pois me autoproclamei cavaleiro,
+      Sai do campo de flores, te procurei
+      Sem espada, sem escudeiro
+      Apenas uma missão e uma punição:
+      "<i>Eu tenho que salvar você,
+      Mas que é que me salva?</i>"
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

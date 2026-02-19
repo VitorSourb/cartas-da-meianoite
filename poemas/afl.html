@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>AS FLORES E O LOUCO</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/mnl.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo" style="text-align: center;">
+    <h1>As Flores e o Louco</h1>
+    <div class="poema">
+      Na selva negra de ramos distorcidos
+Vagava o louco
+
+O louco levava flores aos túmulos
+O louco se ajoelhava diante as lápides
+Chorava os infortúnios
+Nem mesmo se atormentou com as áspides
+
+Um dia, apedrejaram o louco
+Jogaram-o aos bolores
+E mediante o ataque do samouco
+Lá, ele morreu, em meio às flores
+
+Mal esperavam eles
+Pela [re]volta do sistema
+E dos indulgentes
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

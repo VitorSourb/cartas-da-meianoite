@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>VINHO E NIGHTCORE</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/mnl.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo" style="text-align: center;">
+    <h1>Vinho e <i>Nightcore</i></h1>
+    <div class="poema" style="text-align: center;">
+      Oh, quem é ele?
+Uma lembrança nebulosa
+Uma face assustadora
+Um abraço perdido?
+
+Estou apaixonado em um tema?
+Ou ELE é apenas um sonho
+Um mistério
+
+Eu chamo o seu nome
+Através das planícies sem fim
+Ele responde-me
+Onde quer que ele esteja
+
+Em algum lugar do outro lado do mar de tempo
+Um amor imortal com o meu
+Irá se tornar eterno
+
+Ele imortal
+Um dia não voltará para mim
+
+Então vamos, vá para casa e beba algo
+A noite ainda é uma criança
+
+Nt.: Esse texto é um experimento de tradução, não exatamente um poema autoral. É uma adaptação de "<a href="https://www.youtube.com/watch?v=7Sk78uP9m-E">Who is She?</a>", de <a href="https://www.youtube.com/channel/UC4Ch7PhhseIrhp2GMQclpGQ">iMonster</a>.
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>A PLEBE E UNS AMIGOS POR AÍ</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/mnl.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo" style="text-align: center;">
+    <h1>A Plebe e uns Amigos Por Aí</h1>
+    <div class="poema">
+      "<i>Não me roube a solidão sem antes
+Me oferecer a verdadeira companhia</i>"
+E nesse longo entrementes
+Busquei respostas, tão longe quanto na Lombardia
+
+Naquele buraco criminoso
+É difícil esvair as memórias errantes
+Do vai e vem de transformações
+Dos meus eternos ignorantes
+
+E vamos para uma década
+Meus rotineiros insensatos
+Capazes de se extinguirem feito pétala
+Conhecedores de infinitos aparatos
+
+Passei um tempo incalculável
+Idolatrando algoem impalpável
+E com o parar do pensamento irrefreável
+Notei alguém indispensável:
+"<i>Você vai pagar e é dobrado
+Cada lágrima rolada
+Nesse meu penar</i>"
+
+Frequentemente me faz falta
+De um convívio verídico
+Me faltam comentários, oh, sonho efialta
+E o constante temor de mais um solstício raquítico
+Leva às mais cruéis desalmas;
+E não importa se são um, dois ou três
+No fim, vós me traz encalmas
+Um dia, talvez
+Poderei falar com o único
+E esclarecer as linguagens sórdidas do norte
+"<i>Oi, coração
+Não dá pra falar muito não
+Espera passar o avião
+Assim que o inverno passar
+Eu acho que vou te buscar</i>"
+
+Por fim, detesto
+E a Plebe? É muito mais que resto.
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

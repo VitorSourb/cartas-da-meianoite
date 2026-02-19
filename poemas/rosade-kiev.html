@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>ROSA DE KIEV</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/mnl.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo" style="text-align: center;">
+    <h1>Rosa de Kiev</h1>
+    <div class="poema">
+      Irei lhes contar uma história
+Lembram-se do céu ensanguentado e suas 3 estrelas ofuscantes
+Esqueçam-o
+Desse país de céu carmesim, encontramos uma praia
+Praia esta, com um domo celeste turvo
+Faixas de nuvens, faixas anis, faixas de sangue e morte
+Que contaminam as areias douradas
+Agora pensem nas nas faixas estreladas;
+Nômades distantes
+E o morador do domo, alienando seus devotos
+manchastes as estrelas
+o mesmo rejeitado, oprimido, ofendido, estagnado
+continuou a manchar nas dunas de sangue
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

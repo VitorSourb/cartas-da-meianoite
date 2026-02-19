@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>PECADOS PRETÉRITOS</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo">
+    <h1>Pecados Pretéritos</h1>
+    <div class="poema">
+      Cá, a mim, meu verniz vitral
+Aclamar-te-ei até me embriagar.
+Jasmin rubro, aroma prateado de crepúsculo,
+Quantas vezes já não levei a mão ao peito
+Por ter perdido o compasso das palpitações?
+(Parei de contar nos fogos do último verão)
+
+Vem, me dê a mão, a gente agora já não tinha medo,
+Levar-te-ei para o outro lado da lua,
+Contar-te-ei lindas mentiras
+(Rememorar que tu ponderaste tudo isso)
+E dar-vos-á meu veredicto.
+
+Inconcepto floco de neve de cristal
+Adiante, cai sobre mim do cúspide da Yggdrasil
+Inflame com minha solitude
+Atiça-me com inquietude
+E com a certeza de mil sóis
+Deixe de lado nossos pecados pretéritos.
+
+Já és condômina do meu palácio de vidro,
+Meu serafim d'ouro,
+Cá, dá-me tua mão, sem medo
+E de uma coisa tenhas certeza:
+Aguarda-te-ei até o fim dos tempos
+Contar-te-ei o por quê de tudo isso
+Em nosso solene recinto
+No juízo final.
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

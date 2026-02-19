@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>SANATÓRIO</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/mnl.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo" style="text-align: center;">
+    <h1>Sanatório</h1>
+    <div class="poema">
+      Esses galhos retorcidos na janela incomodam
+Ah sim, o mundo acabou
+Então, por que não vamos dar uma volta
+Vem, segure minha mão
+
+Vê aquele corrimão de aeroporto?
+Isso!
+Assim como ele, eu sou o fim, e vim te pegar!
+
+Mas antes disso, você quer um pedaço
+dos MEUS PENSAMENTOS?
+É uma moeda que vale a pena,
+por que não a joga?
+
+Gosta de questionamentos?
+Então que tal esse?
+"<i>O que faz esse frágil mundo girar?</i>"
+Alguma vez já se perdeu?
+Alguma vez, já te encontraram?
+
+Bom, bem no fundo do quintal,
+mora meu INIMIGO
+O tempo,
+e...
+Ei, acelere o passo,
+ou o frio vai nos alcançar!
+Ou deixe o frio ser seu túmulo
+
+Gosto de deixar transparecer meu ágape
+A philia também, mas eles o juntam e descartam-o
+
+Credo, essa chuva não passa Isso é suspeito ao olho da morte
+...
+
+Ei, olhe ali, tem um corpo balançando nas árvores
+Ele está enforcado
+Tem pensamentos esganando sua garganta
+Parece que ele se apaixonou
+pelo brilho da morte
+
+Está escrito nesse corpo:
+
+"<i>O amor não existe.
+Não existe nada.
+Portanto, não existe tristeza.
+Porque eu estou falando sozinho?
+Estou sentindo algo, o que é isso?
+Sinta o que estou sentindo agora</i>"
+
+O que você acha?
+Ei
+Não, não, não Você não fez isso
+
+Você me deixou antes da floresta NÃO, NÃO, NÃO
+
+Por que você fez isso?
+
+Eu estava segurando sua mão e...
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

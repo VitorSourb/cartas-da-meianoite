@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>DE MÃOS (DADAS) ATADAS</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo" style="text-align: center;">
+    <h1>De Mãos (Dadas) Atadas</h1>
+    <div class="poema">
+      De um dia homérico e singular
+Surgistes tu, a rosa prateada.
+Memória, lágrima contada
+Até deixar em desgraça a descartar
+
+'Prá mais alva rosa, badalada.
+Tanto escrevo, sem desconfiar,
+Aara você, que em algum lugar
+A nossa paixão está estancada
+
+De você para mim: não sobrou nada
+Somente, de praxe, maligna dor
+Que não traguei numa só alvorada
+
+Sublime rosa alva no altar
+Cálida, tão bonita e delicada
+De ardor, por ti morro, sem pudor
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

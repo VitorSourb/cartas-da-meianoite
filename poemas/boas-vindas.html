@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>BOAS VINDAS AO ÚLTIMO ADEUS</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/mnl.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo" style="text-align: center;">
+    <h1>Boas Vindas ao Último Adeus</h1>
+    <div class="poema">
+      Foram alvoreceres e crepúsculos
+Revirando no repouso inclemente
+Tentativas falhas e comentários estapafúrdios
+Inseto indigente
+
+E foi nesse dia
+
+Tuas mãos nuas sobrepostas as minhas
+Teu toque caloroso
+Calou os pensamentos e suas murrinhas
+Marcou com um selo ardoso
+
+Paramos de alucinar
+Com apenas um toque, que transmitia mil palavras de perdão;
+E com seu gentil caminhar
+Definiu meu tardão
+
+Que esse selo sirva
+Tranque, iniba
+Pelo menos por agora, dessirva minhas ideias.
+Queria ao menos, as margens de uma riba
+Confessar-lhe de tudo, desde o início do tudo
+Mas tenho receio que proíba
+E me esfregue verdades sanhudo
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

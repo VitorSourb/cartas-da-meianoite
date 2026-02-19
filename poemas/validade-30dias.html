@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>VALIDADE: 30 DIAS</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo">
+    <h1>Validade: 30 Dias</h1>
+    <div class="poema">
+      Justo quando sabatizei
+      Que fui perder as estribeiras de tudo
+      O mamoeiro viu o que fiz
+      O gato contemplou a cena do crime
+
+      Não, não esqueça daquilo!
+      Não olhe para mim, não olhe por mim
+      O gozar de uma vida sumir em segundos
+      Foi você quem viu o que fiz
+
+      Já vai tarde o remorso, o desejo
+      De querer juntar minha saliva ao seu suor
+      Minhas lágrimas às suas
+
+      Com que direito buscar um perdão,
+      Se o direito vigente, o viver, respalda essa injúria?
+      Direito este que dever-se-ia ser tomado.
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>

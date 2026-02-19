@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>ANTES QUE O SANGUE SEQUE</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <link rel="icon" href="../favicon.png" type="image/png">
+</head>
+<body>
+ <div id="menu-container"></div>
+<div class="texto-container">
+  <div class="texto-imagem">
+    <img src="../assets/capas/elcid.png" alt="texto da imagem">
+  </div>
+  <div class="texto-conteudo">
+    <h1>Antes que o Sangue Seque</h1>
+    <div class="poema">
+      Largado,
+      Em alguma trincheira do Oriente Médio
+      Não tenho mais escapatória,
+      O projétil já está fundo no meu peito
+      E, junto com o sangue que me escapa,
+      Meu últimos devaneios.
+
+      Perdi seu relicário há semanas
+      Só queria ver seu rosto uma última vez
+      Mas só eu quero isso.
+      Você é otimista,
+      Mas deve ter aceito, no dia que parti
+      Que eu morreria brevemente.
+
+      O toque que sinto
+      É da gélida mão da Dona Morte;
+      Ela me mostrou algo que mais dói que os tiros:
+      Sua mão,
+      Segurando aquela criança que tem seus olhos
+      — Os mesmos que me apaixonei —
+      E que nunca me chamará de pai
+
+      Tá tudo bem
+      Eu nunca quis passar dos 30 mesmo;
+      Morri aos 15,
+      Morri de novo no ano seguinte,
+      Uma vez mais aos 18
+      São só números
+      Assim como somente fui ridículo mancebo
+      Imigo de mim mesmo
+      Dispensável sobremesa no grande banquete da vida
+
+      Minha última visão são seus olhos,
+      Aliás, meu reflexo nele.
+      Você sempre soube o quanto tentei
+      Mas nunca consegui ser seu primeiro,
+      Sua saudade de domingo
+      Sua fantasia de altar
+      Quem quisera desperdiçar uma vida inteira ao lado.
+      Isso é verdade,
+      Certo?
+    </div>
+  </div>
+</div>
+  
+<script>
+    fetch('../menu.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('menu-container').innerHTML = data;
+
+   // Marca link ativo
+   
+   const links = document.querySelectorAll(".nav-link-menu");
+   const paginaAtual = location.pathname.split("/").pop();
+
+   links.forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (href === paginaAtual || (href === "index.html" && paginaAtual === "")) {
+      link.classList.add("ativo");
+    }
+   });
+    });
+  </script>
+</body>
+</html>
